@@ -4,6 +4,12 @@ from rest_framework.response import Response
 from tutorial.quickstart.models import *
 from tutorial.quickstart.serializers import *
 import json
+import socket
+import sys
+
+host = "hiasen5314.iptime.org"
+port = 8500
+addr = (host,port)
 
 @api_view(['GET'])
 def keyboard(request):
@@ -24,10 +30,21 @@ def message(request):
     응답 메시지에 따른 키보드 영역의 답변 방식(Keyboard)의 조합으로 이루어집니다.
     답변 방식은 주관식(text)과 객관식(buttons) 중 선택할 수 있습니다.
     """
-    user_text = request.data['content']
-
     if request.method == 'POST':
-        message = Message.create(user_text)
+        user = request.data['user_key']
+        data_in = request.data['content']
+        my_str = user+chr(0)+'harry'+chr(0)+data_in+chr(0)
+        print(my_str)
+
+        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        client_socket.connect(addr)
+        #이런식으로 유저이름과 봇이름을 보내야 하더라 이유는 모름
+        client_socket.sendall(my_str.encode('euc-kr'))
+        #난 euc-kr써서 이렇게 인코딩하고, 밑에서 다시 디코드하는 식으로 했는데 이건 환경에 맞춰서 알아서 해주면 됨
+        data_out = client_socket.recv(80)
+        client_socket.close()
+        
+        message = Message.create(data_out.decode('euc-kr'))
         messageResponse = MessageResponse.create(message)
         serializer = MessageResponseSerializer(messageResponse)
         return Response(serializer.data)
