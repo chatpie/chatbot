@@ -1,0 +1,51 @@
+concept: ~gyeongbokgungName [ gyeongbokgung "gyeongbokgung palace" ]
+concept: ~visitingTime [ "visiting time" "viewing time" ]
+concept: ~eventConcept [ event events festival festivals ]
+concept: ~month [ january february march april may june july august september october november december]
+
+Topic: ~gyeongbokgung keep repeat [ ~gyeongbokgungName ~visitingTime fee ]
+
+#! what is gyeongbokgung?
+#! 정보. 짧게 알려주고 더 원하면 더 알려줌. 너무 긴거같음..
+?: (what is ~gyeongbokgungName) Built in 1395, Gyeongbokgung Palace is also commonly referred to as the Northern Palace because its location is furthest north when compared to the neighboring palaces of Changdeokgung (Eastern Palace) and Gyeonghuigung (Western Palace) Palace. Do you want more detail?
+    a: (~yes) Built in 1395, Gyeongbokgung Palace is also commonly referred to as the Northern Palace because its location is furthest north when compared to the neighboring palaces of Changdeokgung (Eastern Palace) and Gyeonghuigung (Western Palace) Palace. Gyeongbokgung Palace is arguably the most beautiful, and remains the largest of all five palaces.
+              The premises were once destroyed by fire during the Imjin War (Japanese Invasions, 1592-1598). However, all of the palace buildings were later restored under the leadership of Heungseondaewongun during the reign of King Gojong (1852-1919).
+              Remarkably, the most representative edifices of the Joseon Dynasty, Gyeonghoeru Pavilion and Hyangwonjeong Pond have remained relatively intact. Woldae and the sculptures of Geunjeongjeon (The Royal Audience Chamber) represent past sculptures of contemporary art.
+              The National Palace Museum of Korea is located south of Heungnyemun Gate, and the National Folk Museum is located on the eastern side within Hyangwonjeong.
+    a: (~no) OK.
+
+#! how can i get to a/the gyeongbokgung?
+#! 대중교통 이용할 경우만 알려주도록 했음.
+#! 차타고오면 네비찍고 알아서 오겠지 뭐.
+?: (how * get to ~gyeongbokgungName) Are you coming by public transportation(Bus or Subway)?
+    a: (~yes) Are you coming by Bus?
+        b: (~yes) If you come from the south, you can take the bus 109, 171, 272, 601, 606, 1020, 7025.
+                  Or If from the west, you can take the bus 1020, 1711, 7016, 7018, 7022, 7212, 6011, 9703.
+        b: (~no) Take line 3 to Gyeongbokgung Station exit number 5. It's a 5-minute walk away.
+                 Or take line 5 to Gwanghwamon Station exit number 2. It's a 10-minute walk away.
+
+#! visiting hours
+#! 현재 시스템 날짜로 달별로 입장시간 알려주기.
+#! 다른 달도 알고싶은 경우도 알려줌.
+?: (how is the ~visitingTime) if(%month<3) {Visiting time of %monthname is 09:00 ~ 17:00 (entry deadline is 16:00)}
+                              else if(%month<6) {Visiting time of %monthname is 09:00 ~ 18:00 (entry deadline is 17:00)}
+                              else if(%month<9) {Visiting time of %monthname is 09:00 ~ 18:30 (entry deadline is 17:30)}
+                              else if(%month<11) {Visiting time of %monthname is 09:00 ~ 18:00 (entry deadline is 17:00)}
+                              else if(%month<13) {Visiting time of %monthname is 09:00 ~ 17:00 (entry deadline is 16:00)}
+    ?: (* _~month *) if(_0 == january or _0 == february) {Visiting time of _0 is 09:00 ~ 17:00 (entry deadline is 16:00)}
+                     else if(_0 == march or _0 == april or _0 == may) {Visiting time of _0 is 09:00 ~ 18:00 (entry deadline is 17:00)}
+                     else if(_0 == june or _0 == july or _0 == august) {Visiting time of _0 is 09:00 ~ 18:30 (entry deadline is 17:30)}
+                     else if(_0 == september or _0 == october) {Visiting time of _0 is 09:00 ~ 18:00 (entry deadline is 17:00)}
+                     else if(november or _0 == december) {Visiting time of _0 is 09:00 ~ 17:00 (entry deadline is 16:00)}
+
+#! fee
+#! 숫자로 나이 입력받아서 나이별로 요금 알려주기.
+?: (how much is * fee) Admission fees vary depending on age. how old are you? just answer numbers.
+    a: (_*) if(_0 < 7) {it's free.}
+            else if(_0 < 19) {it's 1500 won.}
+            else if(_0 < 65) {it's 3000 won.}
+            else {it's free.}
+
+#! event & festival
+#! 찾아보니 다례체험, 수라간시식공감, 전통공연있는데 영어로 뭐라해야할지 몰라서 일단 보류.
+?: (is there any * ~eventConcept *)
