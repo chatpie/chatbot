@@ -1,0 +1,133 @@
+concept: ~GyeongbokPalace ["Gyeongbok Palace" Gyeongbokgung]
+concept: ~info [information know]
+concept: ~way [way go]
+concept: ~visitingHours ["opening hours" "vigiting hours" "time of the visit"]
+concept: ~admission ["admission fee" "entrance fee" fee pay]
+concept: ~FestivalsAndEvents [festival festivals event events]
+
+Topic: ~Gyeongbok keep repeat [~GyeongbokPalace]
+
+#! 경복궁에 대해 궁금하신게 있나요?
+t: INTRO() Have you ever wondered about Gyeongbok Palace?
+		
+	#! 경복궁은 어떤 곳이니? What is Gyeongbok Palace?
+	#! a: (what ~GyeongbokPalace) Gyenbok Palace information.
+
+	#! 경복궁에 대해 알려줘 Let me know about Gyeongbok Palace.
+	a: (~info * ~GyeongbokPalace ) Are you curious about Gyeongbok Palace information?
+		b: (~yes) Gyenbok Palace information.
+
+		b: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+		#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+	#! 경복궁에 어떻게 가? How do you go to Gyeongbokgung?
+	#! 경복궁으로 가는길 좀 알려줘 Know the way to Gyeongbok Palace
+	#! 경복궁은 무얼 타고 가야해? What can you get on in Gyeongbokgung?
+	
+	#! 경복궁 가는 길에 대해 궁금하신게 맞나요?
+	a: (~way * ~GyeongbokPalace ) Are you curious about the way to Gyeongbok Palace?
+		b: (~yes) Gyenbok Palace way.
+
+		b: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+		#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+	#! 경복궁에 관람은 언제 할 수 있어? When can you go to Gyeongbok Palace?
+	#! 경복궁의 관람시간을 알려줘 Let me know the opening hours of Gyeongbok Palace.
+	#! 경복궁은 언제 들어갈 수 있어? When can you enter Gyeongbok Palace?
+
+	#! 경복궁 관람시간에 대해 궁금하신게 맞나요?
+	a: (~visitingHours * ~GyeongbokPalace ) Are you curious about the time of the visit to Gyeongbok Palace?
+		b: (~yes) Gyenbok Palace visitingHours.
+
+		b: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+		#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+	#! 경복궁 입장료는 얼마야? How much is the entrance fee to Gyeongbok Palace?
+	#! 경복궁에 입장할 때 요금을 내야하니? Do you have to pay a fee when you enter Gyeongbok Palace?
+	#! 경복궁의 입장료를 알려줘 Let me know the admission fee for Gyeongbok Palace.
+
+	#! 경복궁 요금에 대해 궁금하신게 맞나요?
+	a: (~admission * ~GyeongbokPalace ) Are you curious about admission to Gyeongbok Palace?
+		b: (~yes) Gyenbok Palace admission fee.
+
+		b: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+		#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+	#! 경복궁에서 하는 축제나 행사가 있니? Is there a festival or event in Gyeongbok Palace?
+	#! 경복궁에는 어떤 축제나 행사가 있니? Do you have any festivals or events in Gyeongbok Palace?
+	#! 경복궁의 행사에 대해 알려줘(축제에 대해 알려줘) Let me know about events at Gyeongbokgung Palace.(festivals)
+
+	#! 경복궁의 축제나 행사에 대해 궁금하신게 맞나요?
+	a: (~FestivalsAndEvents * ~GyeongbokPalace ) Are you curious about festivals and events in Gyeongbok Palace?
+		b: (~yes) Gyenbok Palace festivals or events.
+
+		b: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+		#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+	a: (~no) Do you have any other questions?
+	#! 다른 궁금한게 있으신가요?
+
+
+#! ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#! 경복궁은 어떤 곳이니? What is Gyeongbok Palace?
+#! a: (what ~GyeongbokPalace) Gyenbok Palace information.
+
+#! 경복궁에 대해 알려줘 Let me know about Gyeongbok Palace.
+u: (~info * ~GyeongbokPalace ) Are you curious about Gyeongbok Palace information?
+	a: (~yes) Gyenbok Palace information.
+
+	a: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+	#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+#! 경복궁에 어떻게 가? How do you go to Gyeongbokgung?
+#! 경복궁으로 가는길 좀 알려줘 Know the way to Gyeongbok Palace
+#! 경복궁은 무얼 타고 가야해? What can you get on in Gyeongbokgung?
+
+#! 경복궁 가는 길에 대해 궁금하신게 맞나요?
+u: (~way * ~GyeongbokPalace ) Are you curious about the way to Gyeongbok Palace?
+	a: (~yes) Gyenbok Palace way.
+
+	a: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+	#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+#! 경복궁에 관람은 언제 할 수 있어? When can you go to Gyeongbok Palace?
+#! 경복궁의 관람시간을 알려줘 Let me know the opening hours of Gyeongbok Palace.
+#! 경복궁은 언제 들어갈 수 있어? When can you enter Gyeongbok Palace?
+
+#! 경복궁 관람시간에 대해 궁금하신게 맞나요?
+u: (~visitingHours * ~GyeongbokPalace ) Are you curious about the time of the visit to Gyeongbok Palace?
+	a: (~yes) Gyenbok Palace visitingHours.
+
+	a: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+	#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+#! 경복궁 입장료는 얼마야? How much is the entrance fee to Gyeongbok Palace?
+#! 경복궁에 입장할 때 요금을 내야하니? Do you have to pay a fee when you enter Gyeongbok Palace?
+#! 경복궁의 입장료를 알려줘 Let me know the admission fee for Gyeongbok Palace.
+
+#! 경복궁 요금에 대해 궁금하신게 맞나요?
+u: (~admission * ~GyeongbokPalace ) Are you curious about admission to Gyeongbok Palace?
+	a: (~yes) Gyenbok Palace admission fee.
+
+	a: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+	#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
+
+
+#! 경복궁에서 하는 축제나 행사가 있니? Is there a festival or event in Gyeongbok Palace?
+#! 경복궁에는 어떤 축제나 행사가 있니? Do you have any festivals or events in Gyeongbok Palace?
+#! 경복궁의 행사에 대해 알려줘(축제에 대해 알려줘) Let me know about events at Gyeongbokgung Palace.(festivals)
+
+#! 경복궁의 축제나 행사에 대해 궁금하신게 맞나요?
+u: (~FestivalsAndEvents * ~GyeongbokPalace ) Are you curious about festivals and events in Gyeongbok Palace?
+	a: (~yes) Gyenbok Palace festivals or events.
+
+	a: (~no) If you do not have the answer you want, please write down the word about the information you are interested in and ask for it.
+	#! 혹시 원하는 답변이 아니시라면 궁금한 정보에 대한 단어를 명확히 써서 질문해주시면 답변해드릴 수 있어요.
