@@ -1,6 +1,6 @@
 concept: ~GyeongbokPalaceDict NOUN_PROPER_SINGULAR ["Gyeongbok Palace" Gyeongbokgung]
-concept: ~infoDict NOUN_PROPER_SINGULAR [information know]
-concept: ~wayDict NOUN_PROPER_SINGULAR [way go]
+concept: ~infoDict NOUN_PROPER_SINGULAR [information]
+concept: ~wayDict NOUN_PROPER_SINGULAR [way "get on"]
 concept: ~visitingHoursDict NOUN_PROPER_SINGULAR ["opening hours" "vigiting hours" "time of the visit"]
 concept: ~admissionDict NOUN_PROPER_SINGULAR ["admission fee" "entrance fee" fee pay]
 concept: ~FestivalsAndEventsDict NOUN_PROPER_SINGULAR [festival festivals event events]
